@@ -2,7 +2,6 @@ import { Fragment, useState } from 'react'
 import type { CSSProperties, MouseEvent, ReactNode } from 'react'
 import portrait from './assets/portrait.png'
 import crest from './assets/sovereign-crest.png'
-import odieboardBadge from './assets/odieboard-badge.png'
 
 /* ------------------------------------------------------------------ *
  * Icons — line-art SVGs used everywhere an emoji used to be
@@ -1049,7 +1048,7 @@ export default function App() {
             </div>
             <img
               className="footer-badge"
-              src={odieboardBadge}
+              src="/odblogo.png"
               alt="Powered by ODIEBOARD"
             />
             <div className="footer-cols">
