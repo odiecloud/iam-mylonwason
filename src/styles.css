@@ -344,14 +344,14 @@ blockquote.pull strong{color:var(--fg);font-style:normal}
 
 /* Footer */
 .footer{background:var(--navy);padding-block:56px 32px}
-.footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:56px;flex-wrap:wrap;margin-bottom:44px}
-.footer-brand{flex:0 1 440px;min-width:260px;text-align:center}
+.footer-inner{display:grid;grid-template-columns:minmax(0,1fr) 260px minmax(0,1fr);align-items:center;gap:32px;margin-bottom:44px}
+.footer-brand{width:100%;max-width:440px;min-width:0;text-align:center}
 .footer-logo{display:flex;flex-direction:column;align-items:center;gap:16px;text-decoration:none;margin-bottom:18px}
 .footer-crest{width:320px;max-width:100%;height:auto;display:block}
 .footer-logo .logo-name{font-family:var(--font-d);font-size:17px;font-weight:800;color:#fff;letter-spacing:-.01em}
 .footer-tagline{font-size:15px;color:#fff;line-height:1.7;max-width:440px;margin:0 auto;white-space:normal}
-.footer-cols{display:flex;flex-wrap:wrap;gap:56px}
-.footer-badge{width:176px;max-width:100%;height:auto;display:block;align-self:center}
+.footer-cols{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:36px}
+.footer-badge{width:260px;max-width:100%;height:auto;display:block;align-self:center}
 .footer-links{flex:0 0 auto;text-align:left}
 .footer-links h4{font-family:var(--font-d);font-size:15px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#fff;margin-bottom:20px}
 .footer-links a{display:block;font-size:15px;color:rgba(255,255,255,.6);margin-bottom:14px;text-decoration:none;text-align:left}
@@ -379,11 +379,18 @@ blockquote.pull strong{color:var(--fg);font-style:normal}
   .platform-grid{grid-template-columns:1fr 1fr}
   .contact-grid{grid-template-columns:1fr}
   .stat-row{grid-template-columns:repeat(3,1fr)}
+  .footer-inner{grid-template-columns:minmax(0,1fr) 220px;gap:24px}
+  .footer-badge{width:220px}
+  .footer-cols{grid-column:1/-1;justify-content:center;gap:48px}
 }
 @media(max-width:640px){
   .sec{padding-block:48px}
   .stats-section{padding-block:12px}
   .hero{padding-block:52px 44px}
+  .footer-inner{grid-template-columns:minmax(0,1fr);justify-items:center;gap:32px}
+  .footer-brand{width:100%;min-width:0}
+  .footer-badge{width:260px}
+  .footer-cols{grid-column:auto;width:100%;justify-content:center;gap:28px}
   .card-grid-3{grid-template-columns:1fr}
   .platform-grid{grid-template-columns:1fr;gap:14px}
   .platform-card{min-height:0;padding:22px}
