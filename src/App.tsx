@@ -1047,11 +1047,6 @@ export default function App() {
                 <img className="footer-crest" src={crest} alt="Wason Family Sovereign Governance crest" />
               </div>
             </div>
-            <img
-              className="footer-badge"
-              src={odieboardLogo}
-              alt="Powered by ODIEBOARD"
-            />
             <div className="footer-cols">
               <div className="footer-links">
                 <h4>Sections</h4>
@@ -1070,6 +1065,21 @@ export default function App() {
                 ))}
               </div>
             </div>
+            <a
+              className="footer-badge-link"
+              href="https://odieboard.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Powered by ODIEBOARD"
+            >
+              <img
+                className="footer-badge"
+                src={odieboardLogo}
+                alt="Powered by ODIEBOARD"
+                width="100"
+                height="100"
+              />
+            </a>
           </div>
           <div className="footer-bottom">
             <div className="footer-legal">
