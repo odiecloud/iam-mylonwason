@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react'
 import type { CSSProperties, MouseEvent, ReactNode } from 'react'
 import portrait from './assets/portrait.png'
 import crest from './assets/sovereign-crest.png'
+import odieboardBadge from './assets/odieboard-badge.png'
 
 /* ------------------------------------------------------------------ *
  * Icons — line-art SVGs used everywhere an emoji used to be
@@ -747,7 +748,7 @@ export default function App() {
       </div>
 
       {/* DIGITAL PLATFORMS */}
-      <section className="sec" id="platforms">
+      <section className="sec platforms-section" id="platforms">
         <div className="wrap">
           <div className="eyebrow" style={{ textAlign: 'center' }}>
             My Digital Platforms
@@ -758,34 +759,28 @@ export default function App() {
           <p className="lead" style={centerLead}>
             Three connected digital identities, each designed for a distinct purpose.
           </p>
-          <div className="card-grid-3">
-            {DIGITAL_PLATFORMS.map((platform) => (
-              <a
-                href={platform.href}
-                target="_blank"
-                rel="noreferrer"
-                className="card blue-top"
-                key={platform.href}
-                style={{ color: 'inherit', textDecoration: 'none' }}
-              >
-                <div className="eyebrow" style={{ marginBottom: 8 }}>
-                  {platform.purpose}
+          <div className="platform-grid">
+            {DIGITAL_PLATFORMS.map((platform, index) => (
+              <article className="platform-card" key={platform.href}>
+                <div className="platform-card-top">
+                  <span className="platform-number">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="platform-purpose">{platform.purpose}</span>
                 </div>
-                <h3>{platform.name}</h3>
-                <p>{platform.description}</p>
-              </a>
+                <h3 className="platform-domain">{platform.name}</h3>
+                <p className="platform-description">{platform.description}</p>
+                <a
+                  className="platform-link"
+                  href={platform.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Visit ${platform.name}`}
+                >
+                  Visit website <span aria-hidden="true">→</span>
+                </a>
+              </article>
             ))}
           </div>
-          <p
-            style={{
-              marginTop: 20,
-              textAlign: 'center',
-              color: 'var(--fg-m)',
-              fontSize: '14px',
-            }}
-          >
-            <strong>Connect • Collaborate • Trade • Invest • Grow</strong>
-          </p>
+          <p className="platform-motto">Connect • Collaborate • Trade • Invest • Grow</p>
         </div>
       </section>
 
@@ -1051,20 +1046,12 @@ export default function App() {
               <div className="footer-logo">
                 <img className="footer-crest" src={crest} alt="Wason Family Sovereign Governance crest" />
               </div>
-              <p className="footer-tagline">
-                Connecting Global Africa, the Caribbean, and the Global Diaspora to Opportunities.
-                Building bridges between people, businesses, institutions, and markets through Trade,
-                Manufacturing, Technology, Tourism, Investment, Education, Entrepreneurship, and
-                Career Opportunities.
-              </p>
-              <p className="footer-tagline" style={{ marginTop: 12 }}>
-                Our mission is to digitize Global Africa into a unified, governed, and investable
-                marketplace through the ODIECLOUD²π Ecosystem.
-              </p>
-              <p className="footer-tagline" style={{ marginTop: 12, fontWeight: 700 }}>
-                Connect • Collaborate • Trade • Invest • Grow
-              </p>
             </div>
+            <img
+              className="footer-badge"
+              src={odieboardBadge}
+              alt="Powered by ODIEBOARD"
+            />
             <div className="footer-cols">
               <div className="footer-links">
                 <h4>Sections</h4>
